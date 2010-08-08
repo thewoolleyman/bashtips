@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
-#  http://github.com/thewoolleyman/boxbuilder
-#  Copyright (c) 2010 Chad Woolley - The MIT License
+# My scratch area for figuring out and remembering Bash idioms
 
-#foo() {
+# foo() {
 #  echo $0
 #  echo $1
 #  echo $2
@@ -12,15 +11,17 @@
 #    echo $arg
 #    echo 2222
 #  done
-#}
-#
-#foo aaaa bbb
+# }
+# 
+# foo aaaa bbb
+
 
 #echo 'asdf'
 #echo $@
 #echo arg
 #echo `pwd`/../boxbuilder_utils
 #echo `pwd`/test_helper
+
 
 # a=aaa
 # b=${b:-'export c=yyy'}
@@ -31,6 +32,7 @@
 # echo $c
 # echo bbbbbbbbbbbbbb
 # echo $d
+
 
 # array="vim wget=1.12-1.1ubuntu2 "
 # for i in $array
@@ -53,6 +55,7 @@
 #   echo "installing RVM..."
 # fi
 
+
 # x="aaa=1.2.3"
 # echo ${x%=*} # aaa
 # echo ${x#*=} # 1.2.3
@@ -61,12 +64,16 @@
 # echo ${url1%/*}
 # echo ${url1#*/}
 
+
 # url1="git@github.com:thewoolleyman/boxbuilder_example1_chef_repo.git"
 # url2="https://thewoolleyman@github.com/thewoolleyman/boxbuilder_example1_chef_repo.git"
 # url3="git://github.com/thewoolleyman/boxbuilder_example1_chef_repo.git"
 # 
 # foo="xxx"
-# name_dot_git=${url1##*/}; name="$foo/${name_dot_git%.*}"; echo $name
+# name_dot_git=${url1##*/}
+# name="$foo/${name_dot_git%.*}"
+# echo $name # xxx/boxbuilder_example1_chef_repo
+
 
 # echo $boxbuilder_rvm_version
 # boxbuilder_rvm_version=${boxbuilder_rvm_version:-$(curl -s http://rvm.beginrescueend.com/releases/stable-version.txt)}
@@ -74,11 +81,13 @@
 # foo=$(curl -s http://rvm.beginrescueend.com/releases/stable-version.txt)
 # echo $foo
 
+
 # echo $(curl -O http://rvm.beginrescueend.com/releases/stable-version.txt)
+
 
 # a='IMAGE  ami-66aa400f'
 # b=${a##*[[:blank:]]}
-# echo "111${b}222"
+# echo "111${b}222" # 111ami-66aa400f222
 
 
 
