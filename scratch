@@ -1,0 +1,88 @@
+#!/usr/bin/env bash
+
+#  http://github.com/thewoolleyman/boxbuilder
+#  Copyright (c) 2010 Chad Woolley - The MIT License
+
+#foo() {
+#  echo $0
+#  echo $1
+#  echo $2
+#  for arg; do
+#    echo 1111
+#    echo $arg
+#    echo 2222
+#  done
+#}
+#
+#foo aaaa bbb
+
+#echo 'asdf'
+#echo $@
+#echo arg
+#echo `pwd`/../boxbuilder_utils
+#echo `pwd`/test_helper
+
+# a=aaa
+# b=${b:-'export c=yyy'}
+# echo $b
+# echo zzzzzzzzzzzz
+# d=`$b && echo $c`
+# echo aaaaaaaaaaaaaaaa
+# echo $c
+# echo bbbbbbbbbbbbbb
+# echo $d
+
+# array="vim wget=1.12-1.1ubuntu2 "
+# for i in $array
+# do
+#   echo '------------'
+#   echo $i
+# done
+
+
+# myruby='ruby'
+# if [[ -z $(rvm info | head -n 1 | grep $myruby) ]]; then
+#   echo 'no'
+# else
+#   echo 'yes'  
+# fi
+
+# if [[ ! -z $(which rvm) ]] ; then
+#   echo "Not installing RVM because it is already installed ..."
+# else
+#   echo "installing RVM..."
+# fi
+
+# x="aaa=1.2.3"
+# echo ${x%=*} # aaa
+# echo ${x#*=} # 1.2.3
+
+# url1="git@github.com:thewoolleyman/boxbuilder_example1_chef_repo.git"
+# echo ${url1%/*}
+# echo ${url1#*/}
+
+# url1="git@github.com:thewoolleyman/boxbuilder_example1_chef_repo.git"
+# url2="https://thewoolleyman@github.com/thewoolleyman/boxbuilder_example1_chef_repo.git"
+# url3="git://github.com/thewoolleyman/boxbuilder_example1_chef_repo.git"
+# 
+# foo="xxx"
+# name_dot_git=${url1##*/}; name="$foo/${name_dot_git%.*}"; echo $name
+
+# echo $boxbuilder_rvm_version
+# boxbuilder_rvm_version=${boxbuilder_rvm_version:-$(curl -s http://rvm.beginrescueend.com/releases/stable-version.txt)}
+# echo $boxbuilder_rvm_version
+# foo=$(curl -s http://rvm.beginrescueend.com/releases/stable-version.txt)
+# echo $foo
+
+# echo $(curl -O http://rvm.beginrescueend.com/releases/stable-version.txt)
+
+# a='IMAGE  ami-66aa400f'
+# b=${a##*[[:blank:]]}
+# echo "111${b}222"
+
+
+
+
+
+
+
