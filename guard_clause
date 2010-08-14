@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+_log_prefix='guard_clause'
+
+export PS4='+(${BASH_SOURCE}:${LINENO}): ${FUNCNAME[0]:+${FUNCNAME[0]}(): }'
+
+set -o errexit
+set -o errtrace
+set -o noclobber
+set -o nounset
+set -o pipefail
+set –o verbose
+set -o xtrace
+
+function onexit() {
+  local exit_status=${1:-$?}
+  if [[ $exit_status != 0 ]]; then
+    _error_line="error on line $LINENO."
+  else
+    _error_line=''
+  fi
+  echo "$_log_prefix: $_error_line Exiting $0 with $exit_status"
+  exit $exit_status
+}
+
+trap onexit HUP INT QUIT TERM ERR
+
+disable_error_checking() {
+  trap - ERR
+  set +o errexit
+}
+
+enable_error_checking() {
+  trap onexit ERR
+  set -o errexit
+}
+
+return_without_error_checking() {
+  echo
+}
+
+return_zero() {
+  echo "in return_zero"
+  echo
+  return 0
+  echo "never get to here in return_zero"
+}
+
+return_one() {
+  echo "in return_one"
+  return 1
+  echo "never get to here in return_one"
+}
+
+echo zero
+zero_rc=$(return_zero)
+echo "zero_rc=$zero_rc"
+
+echo one_without_error
+disable_error_checking
+one_without_error=$(return_one)
+enable_error_checking
+
+echo one_with_error
+one_without_error=$(return_one)
+echo "one_rc=$one_rc"
+one_with_error=$(return_one)
+echo finished
