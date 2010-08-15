@@ -52,6 +52,17 @@ return_one() {
   echo "never get to here in return_one"
 }
 
+test_disable_error_checking_in_function() {
+  echo "in test_disable_error_checking_in_function"
+  disable_error_checking
+  echo "ignoring error"
+  cat "force_fail"
+  enable_error_checking
+  echo "finished test_disable_error_checking_in_function"
+}
+
+test_disable_error_checking_in_function
+
 echo zero
 zero_rc=$(return_zero)
 echo "zero_rc=$zero_rc"
