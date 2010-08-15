@@ -89,9 +89,20 @@
 # b=${a##*[[:blank:]]}
 # echo "111${b}222" # 111ami-66aa400f222
 
+#------------------
+# http://gist.github.com/524916
 
+# # heredoc example
+# # any reason this:
+# x=$( cat <<LINES
+# one 1
+# two 2
+# LINES
+# )
+# echo "$x"
+# # ...is better than this?
+# y='one 1
+# two 2'
+# echo "$y"
 
-
-
-
-
+#------------------
