@@ -72,6 +72,18 @@ disable_error_checking
 one_without_error=$(return_one)
 enable_error_checking
 
+echo one_with_pipe_ignoring_error
+disable_error_checking
+# TODO: other ways to disable error checking?
+echo 111
+return_one | true
+echo 222
+(return_one) | true
+echo 333
+$(return_one) | true
+enable_error_checking
+echo 444
+
 echo one_with_error
 one_without_error=$(return_one)
 echo "one_rc=$one_rc"
