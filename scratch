@@ -60,9 +60,9 @@
 # echo ${x%=*} # aaa
 # echo ${x#*=} # 1.2.3
 
-# url1="git@github.com:thewoolleyman/boxbuilder_example1_chef_repo.git"
-# echo ${url1%/*}
-# echo ${url1#*/}
+url1="git@github.com:thewoolleyman/boxbuilder_example1_chef_repo.git"
+echo ${url1%/*} # git@github.com:thewoolleyman
+echo ${url1#*/} # boxbuilder_example1_chef_repo.git
 
 
 # url1="git@github.com:thewoolleyman/boxbuilder_example1_chef_repo.git"
