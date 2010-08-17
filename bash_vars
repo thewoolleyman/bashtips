@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+child_function() {
+  echo 333333333
+  echo $FUNCNAME
+  echo 44444444
+  echo $FUNCNAME[0]
+}
+
+parent_function() {
+  echo 1111111
+  echo $FUNCNAME
+  echo 2222222
+  echo $FUNCNAME[0]
+  child_function
+}
+
+echo $BASH_SOURCE
+echo $LINENO
+parent_function
+

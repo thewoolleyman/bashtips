@@ -106,3 +106,13 @@
 # echo "$y"
 
 #------------------
+
+stop='bbb'
+stop2='ccc'
+
+while read x; do
+  if [[ -n $(echo $x | grep $stop) || $x = $stop2 ]]; then
+    continue
+  fi
+  echo "$x"
+done

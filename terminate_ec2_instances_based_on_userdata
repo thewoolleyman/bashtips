@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+_instances=$(ec2-describe-instances --private-key $EC2_PRIVATE_KEY --cert $EC2_CERT | egrep ^INSTANCE)
+
+echo $_instances
+
+echo '----------------------'
+
+echo "$_instances" | while read line; do
+  echo "$line" | cut -f2
+done
