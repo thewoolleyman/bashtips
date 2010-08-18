@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+export PS4='+(${BASH_SOURCE}:${LINENO}): ${FUNCNAME[0]:+${FUNCNAME[0]}(): }'
+
+set -o errexit
+set -o errtrace
+trap 'echo "ERROR"; exit 1' ERR
+
+disable_error_checking() {
+  trap - ERR
+  set +o errexit
+}
+
+enable_error_checking() {
+  trap 'echo "ERROR"; exit 1' ERR
+  set -o errexit
+}
+
+x=$(printf "foo\nbar\nbaz\n")
+
+# Is there any way to avoid using these disable/enable functions?
+disable_error_checking
+echo "$x" | grep 'not_present'
+enable_error_checking
+
+echo "$x" | grep 'bar'
+
+echo 'no errors'
+exit 0
