@@ -4,6 +4,7 @@ export PS4='+(${BASH_SOURCE}:${LINENO}): ${FUNCNAME[0]:+${FUNCNAME[0]}(): }'
 
 set -o errexit
 set -o errtrace
+set -o pipefail
 trap 'echo "ERROR"; exit 1' ERR
 
 disable_error_checking() {
@@ -18,12 +19,20 @@ enable_error_checking() {
 
 x=$(printf "foo\nbar\nbaz\n")
 
-# Is there any way to avoid using these disable/enable functions?
+# pipe to true works, but only if pipefail is turned off
+set +o pipefail
+y=$(echo "$x" | grep 'not_present' | true)
+set -o pipefail
+
+
+# Is there any way to avoid using these disable/enable functions if pipefail is set?
 disable_error_checking
-echo "$x" | grep 'not_present'
+y=$(echo "$x" | grep 'not_present' | true)
 enable_error_checking
 
-echo "$x" | grep 'bar'
+z=$(echo "$x" | grep 'bar')
+
+echo $z
 
 echo 'no errors'
 exit 0
