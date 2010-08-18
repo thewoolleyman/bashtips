@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+while exists=$(if [[ -e /tmp/touch ]]; then echo exists; fi); [[ "$exists" != "exists" ]]; do
+  echo "waiting for /tmp/touch to exist..."
+  sleep 3
+done
+echo '/tmp/touch exists!'
