@@ -55,7 +55,7 @@
 #   echo "installing RVM..."
 # fi
 
-
+# http://mywiki.wooledge.org/BashFAQ/073
 # x="aaa=1.2.3"
 # echo ${x%=*} # aaa
 # echo ${x#*=} # 1.2.3

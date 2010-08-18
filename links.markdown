@@ -8,3 +8,5 @@ _Bash Hacking References_
 * [http://fvue.nl/wiki/Bash:_Error_handling#Set_ERR_trap_to_exit](http://fvue.nl/wiki/Bash:_Error_handling#Set_ERR_trap_to_exit)
 * [http://www.linuxjournal.com/content/bash-arrays](http://www.linuxjournal.com/content/bash-arrays)
 * [http://mywiki.wooledge.org/BashGuide/TestsAndConditionals](http://mywiki.wooledge.org/BashGuide/TestsAndConditionals)
+* [http://mywiki.wooledge.org/BashGuide/Practices](http://mywiki.wooledge.org/BashGuide/Practices)
+* [http://mywiki.wooledge.org/BashFAQ/073](http://mywiki.wooledge.org/BashFAQ/073)
