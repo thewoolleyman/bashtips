@@ -3,11 +3,10 @@
 echo 11111
 x=$(printf "foo\t\tbar\t\tbaz\n"); lastpart="${x#foo??}"; echo "--${lastpart%%??baz*}--"
 echo 2222222
-perl -e '"foo\t\tbar\t\tbaz\n" =~ /foo\s*([^\s]+)\s*baz/; print "--$1--"'
+perl -e '"foo\t\tfoo\t\tbar\t\tbaz\n" =~ /foo\s*([^\s]+)\s*baz/; print "--$1--\n"'
 echo 3333333
 
 # Execute in a subshell, so default value of IFS doesn't get overridden
-x=$(IFS=$(printf "\t"); while read -r _ myvar _; do echo "--$myvar--"; done < <(printf "foo\t\tbar\t\tbaz\n"))
-printf "%s\n" "$x"
+x=$(IFS=$'\t'; while read -r _ myvar _; do echo "--$myvar--"; done < <(printf "foo\t\tfoo\t\tbar\t\tbaz\r\n")); printf "%s\n" "$x"
 echo 444444444
 while read -r _ myvar _; do echo "--$myvar--"; done < <(printf "foo  bar  baz\n")
