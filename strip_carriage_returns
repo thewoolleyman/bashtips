@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# work in progress.  nothing to see here.
+x=$'aaa\rbbb\nccc\tddd\t\neee\tfff\n'
+echo 1111111111
+sed -n l <<< "$x"
+echo 333333333333333
+y="$(echo "$x" | grep 'ddd')"
+sed -n l <<< "$y"
+#y="$(tr -d $'\r' < <(echo \"$x\") )"
+z="$(sed 's/\x0D$//' < <(echo \"$x\") )"
+echo 55555555555555
+sed -n l <<< "$z"

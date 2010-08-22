@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+foo() {
+  echo
+}
+
+if [[ $(declare -f foo) ]]; then
+  echo 'foo declared'
+else
+  echo "foo not declared (this shouldn't be printed)"
+fi
+
+if [[ ! $(declare -f bar) ]]; then
+  echo "bar not declared"
+else
+  echo "bar declared (this shouldn't be printed)"
+fi
+

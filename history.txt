@@ -1,0 +1,3 @@
+echo a line from history to clipboard:
+
+fc -ln <#> <#> | pbcopy
