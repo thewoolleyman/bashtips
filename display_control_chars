@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 x=$'a\rb'; echo $x | cat -v -
-sed -n l <<< $'a\rb'
+echo "$(sed -n l <<< $'a\rb\nc\rd\n')"
 

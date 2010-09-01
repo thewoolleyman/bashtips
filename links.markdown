@@ -10,3 +10,8 @@ _Bash Hacking References_
 * [http://mywiki.wooledge.org/BashGuide/TestsAndConditionals](http://mywiki.wooledge.org/BashGuide/TestsAndConditionals)
 * [http://mywiki.wooledge.org/BashGuide/Practices](http://mywiki.wooledge.org/BashGuide/Practices)
 * [http://mywiki.wooledge.org/BashFAQ/073](http://mywiki.wooledge.org/BashFAQ/073)
+* [http://www.gnu.org/software/bash/manual/bashref.html#Command-Grouping](http://www.gnu.org/software/bash/manual/bashref.html#Command-Grouping)
+* [http://mywiki.wooledge.org/BashGuide/TestsAndConditionals#Conditional_Blocks_.28if.2C_test_and_.5B.5B.29](http://mywiki.wooledge.org/BashGuide/TestsAndConditionals#Conditional_Blocks_.28if.2C_test_and_.5B.5B.29)
+* []()
+* []()
+* []()

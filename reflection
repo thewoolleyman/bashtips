@@ -16,3 +16,8 @@ else
   echo "bar declared (this shouldn't be printed)"
 fi
 
+if [[ $(type -t foo) = 'function' ]]; then
+  echo 'foo declared'
+else
+  echo 'foo not declared'
+fi
