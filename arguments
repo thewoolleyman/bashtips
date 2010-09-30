@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+# function arguments and variable scope
+
+child_function() {
+  echo $FUNCNAME
+  echo "$1 $2"
+  local dont_override='used local in child'
+  echo $dont_override
+  override='overrode in child'
+  echo $override
+}
+
+parent_function() {
+  echo $FUNCNAME
+  echo "$1 $2"
+  local dont_override='used local in parent'
+  echo $dont_override
+  override='overrode in parent'
+  echo $override
+  child_function $2 $1 $dont_override
+}
+
+arg_a='aaa'
+arg_b='bbb'
+dont_override='dont override this'
+override='override this'
+parent_function $arg_b $arg_a
+echo $dont_override
+echo $override
+
