@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+echo 'aaa' > /tmp/aaa
+tmpvar=( /tmp/aaa ) # this is an array! You can print it, but can't export it
+var=${tmpvar[0]} # grab the first element, and you can export that...
+echo var
+export var
+var2=$var
+export var2
+echo "local output: var=$var var2=$var2"
+echo $(./subshell_var_passing2)

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+echo "subshell output: var=$var var2=$var2"
